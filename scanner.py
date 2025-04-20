@@ -30,7 +30,7 @@ for p in cap:
     layer = getattr(p, 'tls', None) or getattr(p, 'ssl', None)
     if layer:
         flags['SSL/TLS'] = True
-        ver = getattr(layer, 'handshake_version', None) or getattr(layer, 'record_version', None)
+        ver = getattr(layer, 'handshake_version', None)
         if ver in ('0x0301', '0x0302'):
             tls_bad.add(ver)
 
